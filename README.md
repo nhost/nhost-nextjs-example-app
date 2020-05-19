@@ -1,0 +1,1 @@
+# nhost-nextjs-example-app
