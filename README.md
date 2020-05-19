@@ -1,1 +1,1 @@
-# nhost-nextjs-example-app
+# Nhost NextJS Example App
