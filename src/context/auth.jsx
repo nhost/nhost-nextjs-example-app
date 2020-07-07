@@ -1,22 +1,34 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 // import Router, { useRouter } from "next/router";
 import { auth } from "lib/nhost";
 import { Login } from "components/login";
 
 export const AuthContext = createContext();
 
-export default function AuthProvider({ children }) {
-  const [signedIn, setSignedIn] = useState(null);
+// export default function AuthProvider({ children }) {
+export default class AuthProvider extends React.Component {
+  constructor(props) {
+    super(props);
 
-  useEffect(() => {
+    this.state = {
+      signedIn: null,
+    };
+
+    console.log("setting onAuthStateChanged function");
     auth.onAuthStateChanged((data) => {
-      setSignedIn(data);
+      console.log("inside onAuthStateChanged");
+      this.setState({ signedIn: data });
+      // setSignedIn(data);
     });
-  }, []);
+  }
 
-  return (
-    <AuthContext.Provider value={{ signedIn }}>{children}</AuthContext.Provider>
-  );
+  render() {
+    return (
+      <AuthContext.Provider value={{ signedIn: this.state.signedIn }}>
+        {this.props.children}
+      </AuthContext.Provider>
+    );
+  }
 }
 
 export function useAuth() {

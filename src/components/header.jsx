@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import Link from "next/link";
 import { auth } from "lib/nhost";
+import { useAuth } from "context/auth";
 
 const HeaderContainer = styled.div`
   .top-container {
@@ -24,10 +25,6 @@ const GET_SELF = gql`
 `;
 
 function HeaderSelf(props) {
-  if (!auth.isAuthenticated()) {
-    return <div>Not logged in</div>;
-  }
-
   const { loading, data } = useQuery(GET_SELF, {
     variables: {
       id: auth.getClaim("x-hasura-user-id"),
@@ -42,13 +39,24 @@ function HeaderSelf(props) {
 }
 
 export function Header(props) {
+  const { signedIn } = useAuth();
+
+  function renderUserHeader(signedIn) {
+    switch (signedIn) {
+      case null:
+        return <div>Loading...</div>;
+      case false:
+        return <div>Not logged in</div>;
+      case true:
+        return <HeaderSelf />;
+    }
+  }
+
   return (
     <HeaderContainer>
       <div className="top-container">
         <div>Blocket</div>
-        <div>
-          <HeaderSelf />
-        </div>
+        <div>{renderUserHeader(signedIn)}</div>
       </div>
       <div className="menu-container">
         <Link href="/">
