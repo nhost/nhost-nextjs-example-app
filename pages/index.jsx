@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Header } from "components/header";
+import { Header } from "../components/header";
 import Head from "next/head";
-import { graphQLClient } from "lib/graphql";
+import { graphQLClient } from "../lib/graphql";
 import Link from "next/link";
 
 const IndexContainer = styled.div``;

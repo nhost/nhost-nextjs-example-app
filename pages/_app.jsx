@@ -1,6 +1,6 @@
 import { ApolloProvider } from "@apollo/react-hooks";
 import AuthProvider from "../context/auth";
-import { createApolloClient } from "lib/apollo-client";
+import { createApolloClient } from "../lib/apollo-client";
 
 const defaultClient = createApolloClient();
 

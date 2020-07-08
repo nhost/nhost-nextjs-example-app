@@ -1,7 +1,6 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-// import Router, { useRouter } from "next/router";
-import { auth } from "lib/nhost";
-import { Login } from "components/login";
+import React, { createContext, useContext } from "react";
+import { auth } from "../lib/nhost";
+import { Login } from "../components/login";
 
 export const AuthContext = createContext();
 
@@ -18,7 +17,6 @@ export default class AuthProvider extends React.Component {
     auth.onAuthStateChanged((data) => {
       console.log("inside onAuthStateChanged");
       this.setState({ signedIn: data });
-      // setSignedIn(data);
     });
   }
 
@@ -39,12 +37,6 @@ export function useAuth() {
 export function ProtectRoute(Component) {
   return () => {
     const { signedIn } = useAuth();
-
-    // use redirects instead
-    // const router = useRouter();
-    // useEffect(() => {
-    //   if (signedIn === false) Router.push("/login");
-    // }, [signedIn]);
 
     if (signedIn === null) {
       return <div>Checking auth...</div>;

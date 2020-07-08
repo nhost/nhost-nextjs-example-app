@@ -2,16 +2,17 @@ import styled from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import Link from "next/link";
-import { auth } from "lib/nhost";
-import { useAuth } from "context/auth";
+import { auth } from "../lib/nhost";
+import { useAuth } from "../context/auth";
 
 const HeaderContainer = styled.div`
-  .top-container {
-    display: flex;
-  }
-
   .menu-container {
     display: flex;
+    flex-direction: row;
+  }
+
+  .separator {
+    margin: 4px;
   }
 `;
 
@@ -35,7 +36,7 @@ function HeaderSelf(props) {
     return <div>Loading...</div>;
   }
 
-  return <div>{data.self.display_name}</div>;
+  return <div>{data.self.display_name} (logout)</div>;
 }
 
 export function Header(props) {
@@ -54,24 +55,33 @@ export function Header(props) {
 
   return (
     <HeaderContainer>
-      <div className="top-container">
-        <div>Blocket</div>
-        <div>{renderUserHeader(signedIn)}</div>
-      </div>
       <div className="menu-container">
         <Link href="/">
           <a>Home</a>
         </Link>
-        <Link href="/dashboard">
-          <a>Dashboard</a>
-        </Link>
-        <a
-          onClick={() => {
-            auth.logout();
-          }}
-        >
-          Logout
-        </a>
+
+        {auth.isAuthenticated() && <div className="separator">|</div>}
+        {auth.isAuthenticated() && (
+          <Link href="/dashboard">
+            <a>Dashboard</a>
+          </Link>
+        )}
+        <div className="separator">|</div>
+        <div className="flex flex-fixed">
+          {auth.isAuthenticated() ? (
+            <Link href="/">
+              <a
+                onClick={() => {
+                  auth.logout();
+                }}
+              >
+                <HeaderSelf />
+              </a>
+            </Link>
+          ) : (
+            <Link href="/login">Login</Link>
+          )}
+        </div>
       </div>
     </HeaderContainer>
   );

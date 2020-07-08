@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { graphQLClient } from "lib/graphql";
 import styled from "styled-components";
 import Head from "next/head";
@@ -42,7 +41,6 @@ export async function getStaticPaths() {
   `;
 
   const data = await graphQLClient.request(GET_ADS);
-
   const paths = data.ads.map((ad) => `/ads/${ad.id}`);
 
   return { paths, fallback: false };

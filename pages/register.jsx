@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Router from "next/router";
 import Link from "next/link";
-import { auth } from "lib/nhost";
+import { auth } from "../lib/nhost";
 
-const LoginContainer = styled.div``;
+const RegisterContainer = styled.div``;
 
-export function Login(props) {
+export default function Register(props) {
   const [email, setEmail] = useState("elitasson@gmail.com");
   const [password, setPassword] = useState("hejsan");
 
@@ -13,16 +14,15 @@ export function Login(props) {
     e.preventDefault();
 
     try {
-      await auth.login(email, password);
+      await auth.register(email, password);
+      Router.push("/dashboard");
     } catch (error) {
-      alert(`error logging in`);
-      return;
+      console.log({ error });
     }
   };
-
   return (
-    <LoginContainer>
-      <h2>Login</h2>
+    <RegisterContainer>
+      <h2>Register</h2>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -33,16 +33,15 @@ export function Login(props) {
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Login</button>
+        <button>Register</button>
       </form>
-
       <div>
-        <Link href="/register">
-          <a>Register</a>
+        <Link href="/login">
+          <a>Login</a>
         </Link>
       </div>
       <div>
@@ -50,6 +49,6 @@ export function Login(props) {
           <a>Index</a>
         </Link>
       </div>
-    </LoginContainer>
+    </RegisterContainer>
   );
 }

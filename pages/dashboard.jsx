@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ProtectRoute } from "../context/auth";
-import { Header } from "components/header";
-import { NewAd } from "components/new-ad";
-import { MyAds } from "components/my-ads";
+import { Header } from "../components/header";
+import { NewAd } from "../components/new-ad";
+import { MyAds } from "../components/my-ads";
 
 const DashboardContainer = styled.div``;
 
