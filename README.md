@@ -14,8 +14,8 @@ $ yarn install && yarn dev
 
 Navigate to [http://localhost:3000](http://localhost:3000) and you should see the app running. 
 
-### How is this project structured 
+### How is the project structured 
 
-`./lib/config.js` contains the endpoints for both Hasura GraphQL ond Hasura Backend Plus which, by default, point to a project running on Nhost. 
-`./context/auth.js` contains the authorization logic. 
+[./lib/config.js](https://github.com/nhost/nhost-nextjs-example-app/blob/master/lib/config.js) contains the endpoints for both Hasura GraphQL and Hasura Backend Plus which, by default, point to a project running on Nhost. 
+[./context/auth.js](https://github.com/nhost/nhost-nextjs-example-app/blob/master/context/auth.jsx) contains authorization logic. 
 
