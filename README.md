@@ -1,4 +1,4 @@
-![Next.js Logo](https://github.com/nhost/nhost-nextjs-example-app/blob/master/src/public/nextjs.svg)
+![Next.js Logo](https://github.com/nhost/nhost-nextjs-example-app/blob/master/public/nextjs.svg)
 # Next.js Example
 This repo is a small example of a [Next.js](https://nextjs.org/) app with Nhost as the backend.
 ## How was this example created
