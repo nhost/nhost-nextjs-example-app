@@ -1,13 +1,21 @@
-# Nhost NextJS Example App
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-yarn dev
+![Next.js Logo](https://github.com/nhost/nhost-nextjs-example-app/blob/master/src/public/nextjs.svg)
+# Next.js Example
+This repo is a small example of a [Next.js](https://nextjs.org/) app with Nhost as the backend.
+## How was this example created
+We used the default starter template from `create-next-app`  
+```shell
+$ npx create-next-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install and run development server
+```shell
+$ yarn install && yarn dev
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Navigate to [http://localhost:3000](http://localhost:3000) and you should see the app running. 
+
+### How is this project structured 
+
+`./lib/config.js` contains the endpoints for both Hasura GraphQL ond Hasura Backend Plus which, by default, point to a project running on Nhost. 
+`./context/auth.js` contains the authorization logic. 
+
