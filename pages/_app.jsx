@@ -1,15 +1,13 @@
-import { ApolloProvider } from "@apollo/react-hooks";
-import AuthProvider from "../context/auth";
-import { createApolloClient } from "../lib/apollo-client";
-
-const defaultClient = createApolloClient();
+import { NhostAuthProvider, NhostApolloProvider } from "react-nhost";
+import { auth } from "lib/nhost";
+import { graphql_endpoint } from "lib/config";
 
 export default function App({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <ApolloProvider client={defaultClient}>
+    <NhostAuthProvider auth={auth}>
+      <NhostApolloProvider auth={auth} gql_endpoint={graphql_endpoint}>
         <Component {...pageProps} />
-      </ApolloProvider>
-    </AuthProvider>
+      </NhostApolloProvider>
+    </NhostAuthProvider>
   );
 }

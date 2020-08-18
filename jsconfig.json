@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src"
-    // "paths": {
-    //   "@/design-system/*": ["components/design-system/*"]
-    // }
+    "baseUrl": "."
   }
 }

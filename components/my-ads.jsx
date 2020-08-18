@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useSubscription, useMutation } from "@apollo/react-hooks";
+import { useSubscription, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 
 const S_GET_MY_ADS = gql`

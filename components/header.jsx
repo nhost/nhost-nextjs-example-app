@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import Link from "next/link";
-import { auth } from "../lib/nhost";
-import { useAuth } from "../context/auth";
+import { useAuth } from "react-nhost";
+import { auth } from "lib/nhost";
 
 const HeaderContainer = styled.div`
   .menu-container {

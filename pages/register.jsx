@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Router from "next/router";
 import Link from "next/link";
-import { auth } from "../lib/nhost";
+import { auth } from "lib/nhost";
 
 const RegisterContainer = styled.div``;
 
