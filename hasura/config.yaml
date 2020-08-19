@@ -1,0 +1,4 @@
+version: 2
+endpoint: https://hasura-xxx.nhost.app
+admin_secret: xxxxxx
+metadata_directory: metadata

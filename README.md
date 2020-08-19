@@ -1,21 +1,24 @@
-![Next.js Logo](https://github.com/nhost/nhost-nextjs-example-app/blob/master/public/nextjs.svg)
-# Next.js Example
-This repo is a small example of a [Next.js](https://nextjs.org/) app with Nhost as the backend.
-## How was this example created
-We used the default starter template from `create-next-app`  
-```shell
-$ npx create-next-app
-```
+# Nhost NextJS Example App
 
-Install and run development server
-```shell
-$ yarn install && yarn dev
-```
+A simple, yet powerful, NextJS to show how [Nhost](https://nhost.io) and [NextJS](https://nextjs.org) can work together.
 
-Navigate to [http://localhost:3000](http://localhost:3000) and you should see the app running. 
+## Features
 
-### How is the project structured 
+- Select public data (ads) using `getStaticProps`.
+- Authentication
+  - Protect Dashboard route
+- Select, Insert, Update and Delete data as a logged in user
+  - With correct permissions
 
-[./lib/config.js](https://github.com/nhost/nhost-nextjs-example-app/blob/master/lib/config.js) contains the endpoints for both Hasura GraphQL and Hasura Backend Plus which, by default, point to a project running on Nhost. 
-[./context/auth.js](https://github.com/nhost/nhost-nextjs-example-app/blob/master/context/auth.jsx) contains authorization logic. 
+## Get started
 
+Basically, create a Nhost project, edit two config files, apply Hasura migrations/metadata to your Nhost project and you are good to go!
+
+1. Create a new [Nhost project](https://console.nhost.io).
+2. `git clone git@github.com:nhost/nhost-nextjs-example-app.git` to clone this repo.
+3. Update `lib/config.js` with **Backend** and **GraphQL** endpoints from your Nhost Project.
+4. Update `hasura/config.yaml` with **GraphQL endpoint** and **Admin Secret** from your Nhost project.
+5. Make sure you have the [Hasura CLI](https://hasura.io/docs/1.0/graphql/manual/hasura-cli/install-hasura-cli.html) installed.
+6. `cd hasura`, `hasura migrate apply`, `hasura metadata apply` to apply Hasura migrations and metadata.
+7. `yarn install` to install dependencies.
+8. `yarn dev` to start NextJS.

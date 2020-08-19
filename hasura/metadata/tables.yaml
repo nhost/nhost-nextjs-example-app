@@ -1,0 +1,191 @@
+- table:
+    schema: auth
+    name: account_providers
+  object_relationships:
+  - name: account
+    using:
+      foreign_key_constraint_on: account_id
+  - name: provider
+    using:
+      foreign_key_constraint_on: auth_provider
+- table:
+    schema: auth
+    name: account_roles
+  object_relationships:
+  - name: account
+    using:
+      foreign_key_constraint_on: account_id
+  - name: roleByRole
+    using:
+      foreign_key_constraint_on: role
+- table:
+    schema: auth
+    name: accounts
+  object_relationships:
+  - name: role
+    using:
+      foreign_key_constraint_on: default_role
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+  array_relationships:
+  - name: account_providers
+    using:
+      foreign_key_constraint_on:
+        column: account_id
+        table:
+          schema: auth
+          name: account_providers
+  - name: account_roles
+    using:
+      foreign_key_constraint_on:
+        column: account_id
+        table:
+          schema: auth
+          name: account_roles
+  - name: refresh_tokens
+    using:
+      foreign_key_constraint_on:
+        column: account_id
+        table:
+          schema: auth
+          name: refresh_tokens
+- table:
+    schema: auth
+    name: providers
+  array_relationships:
+  - name: account_providers
+    using:
+      foreign_key_constraint_on:
+        column: auth_provider
+        table:
+          schema: auth
+          name: account_providers
+- table:
+    schema: auth
+    name: refresh_tokens
+  object_relationships:
+  - name: account
+    using:
+      foreign_key_constraint_on: account_id
+- table:
+    schema: auth
+    name: roles
+  array_relationships:
+  - name: account_roles
+    using:
+      foreign_key_constraint_on:
+        column: role
+        table:
+          schema: auth
+          name: account_roles
+  - name: accounts
+    using:
+      foreign_key_constraint_on:
+        column: default_role
+        table:
+          schema: auth
+          name: accounts
+- table:
+    schema: public
+    name: ads
+  object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+  insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      set:
+        user_id: x-hasura-user-id
+      columns:
+      - currency
+      - description
+      - price
+      - title
+      backend_only: false
+  select_permissions:
+  - role: public
+    permission:
+      columns:
+      - created_at
+      - currency
+      - description
+      - id
+      - price
+      - title
+      filter: {}
+  - role: user
+    permission:
+      columns:
+      - price
+      - currency
+      - description
+      - title
+      - created_at
+      - updated_at
+      - id
+      - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+  update_permissions:
+  - role: user
+    permission:
+      columns:
+      - currency
+      - description
+      - price
+      - title
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      check: {}
+- table:
+    schema: public
+    name: users
+  object_relationships:
+  - name: account
+    using:
+      manual_configuration:
+        remote_table:
+          schema: auth
+          name: accounts
+        column_mapping:
+          id: user_id
+  array_relationships:
+  - name: ads
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          schema: public
+          name: ads
+  select_permissions:
+  - role: public
+    permission:
+      columns:
+      - display_name
+      - id
+      filter: {}
+  - role: user
+    permission:
+      columns:
+      - id
+      - created_at
+      - updated_at
+      - display_name
+      - avatar_url
+      filter: {}
+  event_triggers:
+  - name: asdasd
+    definition:
+      enable_manual: false
+      insert:
+        columns: '*'
+    retry_conf:
+      num_retries: 0
+      interval_sec: 10
+      timeout_sec: 60
+    webhook_from_env: WEBHOOK_NEW_USER
