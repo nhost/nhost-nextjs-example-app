@@ -3645,10 +3645,10 @@ next@9.5.2:
     webpack "4.44.1"
     webpack-sources "1.4.3"
 
-nhost-js-sdk@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/nhost-js-sdk/-/nhost-js-sdk-2.1.1.tgz#9433df1c606fdf3067b8ea6e4c0f4dbfe3bd5726"
-  integrity sha512-V53kffCoA5XLRKGmY2UdtUTRKt2rhh5zR/zC+xvl8jegwMRUKaZtT6fSfxl8CpXGsIZkGG5y/GP+bg6QMcbKeA==
+nhost-js-sdk@2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/nhost-js-sdk/-/nhost-js-sdk-2.1.3.tgz#08a172d6120d664be74a1f65b52fe4914419ee15"
+  integrity sha512-SXY1P2qvvwrsmdf0bZiO8aKxEBKnEL5yELM5EstpXLbKcJOXYAbUmz11QniV3unxl7rX82LmYCUYu53Ey9xgJA==
   dependencies:
     "@types/jwt-decode" "^2.2.1"
     axios "^0.19.2"
