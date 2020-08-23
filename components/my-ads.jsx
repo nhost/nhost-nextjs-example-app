@@ -29,9 +29,6 @@ export function MyAds() {
   const { loading, data } = useSubscription(S_GET_MY_ADS);
   const [deleteAd] = useMutation(DELETE_AD);
 
-  console.log({ loading });
-  // console.log({ data });
-
   if (loading && !data) {
     return <div>Loading..</div>;
   }

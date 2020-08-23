@@ -17,7 +17,9 @@ export default function Register(props) {
       await auth.register(email, password);
       Router.push("/dashboard");
     } catch (error) {
-      console.log({ error });
+      alert("error register an account, check the console logs.");
+      console.error({ error });
+      return;
     }
   };
   return (

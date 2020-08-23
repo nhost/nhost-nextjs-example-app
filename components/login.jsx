@@ -18,6 +18,7 @@ export function Login(props) {
       Router.push("/dashboard");
     } catch (error) {
       alert(`error logging in`);
+      console.error({ error });
       return;
     }
   };
