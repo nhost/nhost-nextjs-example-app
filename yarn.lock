@@ -4213,10 +4213,10 @@ react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-nhost@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/react-nhost/-/react-nhost-1.1.8.tgz#5fdbd8143528e189db2bbb50715da8b6c92ee58e"
-  integrity sha512-p96VFRnH2P9D9NClYNL0E4zMnUqN8NPsKMaxXOF/keQJ+rprLcykomPYk+ApiDGS8i7W2i+93LKSiydRrGNCaw==
+react-nhost@1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/react-nhost/-/react-nhost-1.1.10.tgz#ce5cb15a013b60eba2ce63f65337e3c4bd726824"
+  integrity sha512-L4zwxK+L9ClXWeA4d82X6cNwFycm4SDjJSy1BEdxmgEeKTNvxw3FIVzuiqg3eQFHMW43IWrsyqRoykZ8d5ih5w==
   dependencies:
     "@apollo/link-context" "^2.0.0-beta.3"
     apollo-cache-inmemory "^1.6.6"

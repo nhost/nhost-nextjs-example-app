@@ -16,7 +16,7 @@
     "nhost-js-sdk": "2.1.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-nhost": "^1.1.8",
+    "react-nhost": "1.1.10",
     "styled-components": "^5.1.1",
     "swr": "^0.2.3",
     "unfetch": "^4.1.0"
