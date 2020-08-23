@@ -7,8 +7,8 @@ import Router from "next/router";
 const LoginContainer = styled.div``;
 
 export function Login(props) {
-  const [email, setEmail] = useState("elitasson@gmail.com");
-  const [password, setPassword] = useState("hejsan");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

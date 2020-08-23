@@ -7,8 +7,8 @@ import { auth } from "lib/nhost";
 const RegisterContainer = styled.div``;
 
 export default function Register(props) {
-  const [email, setEmail] = useState("elitasson@gmail.com");
-  const [password, setPassword] = useState("hejsan");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
