@@ -1,3 +1,5 @@
+![](https://github.com/nhost/nhost-nextjs-example-app/blob/master/assets/nhost-nextjs.png)
+
 # Nhost NextJS Example App
 
 A simple, yet powerful, NextJS to show how [Nhost](https://nhost.io) and [NextJS](https://nextjs.org) can work together.
