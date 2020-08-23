@@ -79,7 +79,9 @@ export function Header(props) {
               </a>
             </Link>
           ) : (
-            <Link href="/login">Login</Link>
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
           )}
         </div>
       </div>
