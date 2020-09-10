@@ -5,7 +5,7 @@ import { graphql_endpoint } from "lib/config";
 export default function App({ Component, pageProps }) {
   return (
     <NhostAuthProvider auth={auth}>
-      <NhostApolloProvider auth={auth} gql_endpoint={graphql_endpoint}>
+      <NhostApolloProvider auth={auth} gqlEndpoint={graphql_endpoint}>
         <Component {...pageProps} />
       </NhostApolloProvider>
     </NhostAuthProvider>

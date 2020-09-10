@@ -2814,20 +2814,15 @@ graphql-request@^2.0.0:
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-2.0.0.tgz#8dd12cf1eb2ce0c80f4114fd851741e091134862"
   integrity sha512-Ww3Ax+G3l2d+mPT8w7HC9LfrKjutnCKtnDq7ZZp2ghVk5IQDjwAk3/arRF1ix17Ky15rm0hrSKVKxRhIVlSuoQ==
 
-graphql-tag@^2.10.3:
-  version "2.10.3"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.3.tgz#ea1baba5eb8fc6339e4c4cf049dabe522b0edf03"
-  integrity sha512-4FOv3ZKfA4WdOKJeHdz6B3F/vxBLSgmBcGeAFPf4n1F64ltJUvOOerNj0rsJxONQGdhUMynQIvd6LzB+1J5oKA==
-
-graphql-tag@^2.11.0:
+graphql-tag@2.11.0, graphql-tag@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.11.0.tgz#1deb53a01c46a7eb401d6cb59dec86fa1cccbffd"
   integrity sha512-VmsD5pJqWJnQZMUeRwrDhfgoyqcfwEkvtpANqcoUG8/tOLkwNgU9mzub/Mc78OJMhHjx7gfAMTxzdG43VGg3bA==
 
-graphql@^15.1.0:
-  version "15.1.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.1.0.tgz#b93e28de805294ec08e1630d901db550cb8960a1"
-  integrity sha512-0TVyfOlCGhv/DBczQkJmwXOK6fjWkjzY3Pt7wY8i0gcYXq8aogG3weCsg48m72lywKSeOqedEHvVPOvZvSD51Q==
+graphql@15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.3.0.tgz#3ad2b0caab0d110e3be4a5a9b2aa281e362b5278"
+  integrity sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==
 
 has-flag@^3.0.0:
   version "3.0.0"
@@ -3645,10 +3640,10 @@ next@9.5.2:
     webpack "4.44.1"
     webpack-sources "1.4.3"
 
-nhost-js-sdk@2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/nhost-js-sdk/-/nhost-js-sdk-2.1.3.tgz#08a172d6120d664be74a1f65b52fe4914419ee15"
-  integrity sha512-SXY1P2qvvwrsmdf0bZiO8aKxEBKnEL5yELM5EstpXLbKcJOXYAbUmz11QniV3unxl7rX82LmYCUYu53Ey9xgJA==
+nhost-js-sdk@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/nhost-js-sdk/-/nhost-js-sdk-2.2.1.tgz#30694db9d47be55c30632c652bdd4eb29c2de12a"
+  integrity sha512-N0BkN0PRmUEF2MhtdnIBvtfbCcTyitaY0ER2mfAuInxchW8gaMBshRXE50Lr3X7m0XEEBhmQaxfUwE542F5oTA==
   dependencies:
     "@types/jwt-decode" "^2.2.1"
     axios "^0.19.2"
@@ -4208,15 +4203,15 @@ react-dom@16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1:
+react-is@16.13.1, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-nhost@1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/react-nhost/-/react-nhost-1.1.10.tgz#ce5cb15a013b60eba2ce63f65337e3c4bd726824"
-  integrity sha512-L4zwxK+L9ClXWeA4d82X6cNwFycm4SDjJSy1BEdxmgEeKTNvxw3FIVzuiqg3eQFHMW43IWrsyqRoykZ8d5ih5w==
+react-nhost@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-nhost/-/react-nhost-2.0.1.tgz#6a9982cc245606d5f119dff5248ea2d2d312dcb7"
+  integrity sha512-RpfS1q3bm3m4laaWlcc0WgVsh1weXIoS9vErOxbhNrufUopcljzh1wcoIEq8mCDSoNPzB8POJ+t6oVsT+fpYbA==
   dependencies:
     "@apollo/link-context" "^2.0.0-beta.3"
     apollo-cache-inmemory "^1.6.6"
@@ -4806,7 +4801,7 @@ stylis@3.5.4:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
   integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
 
-subscriptions-transport-ws@^0.9.17:
+subscriptions-transport-ws@^0.9.17, subscriptions-transport-ws@^0.9.18:
   version "0.9.18"
   resolved "https://registry.yarnpkg.com/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.18.tgz#bcf02320c911fbadb054f7f928e51c6041a37b97"
   integrity sha512-tztzcBTNoEbuErsVQpTN2xUNN/efAZXyCyL5m3x4t6SKrEiTL2N8SaKWBFWM4u56pL79ULif3zjyeq+oV+nOaA==

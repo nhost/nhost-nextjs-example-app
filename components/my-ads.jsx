@@ -11,6 +11,7 @@ const S_GET_MY_ADS = gql`
       description
       price
       currency
+      user_id
     }
   }
 `;
@@ -26,11 +27,16 @@ const DELETE_AD = gql`
 const MyAdsContainer = styled.div``;
 
 export function MyAds() {
-  const { loading, data } = useSubscription(S_GET_MY_ADS);
+  const { loading, data, error } = useSubscription(S_GET_MY_ADS);
   const [deleteAd] = useMutation(DELETE_AD);
 
   if (loading && !data) {
     return <div>Loading..</div>;
+  }
+
+  if (error) {
+    console.error(error);
+    return <div>Error. Check console log.</div>;
   }
 
   const removeAd = (id) => {
@@ -46,7 +52,8 @@ export function MyAds() {
       {data.ads.map((ad) => {
         return (
           <li key={ad.id}>
-            {ad.title} <span onClick={() => removeAd(ad.id)}>[delete]</span>
+            {ad.title}, user_id: {ad.user_id}{" "}
+            <span onClick={() => removeAd(ad.id)}>[delete]</span>
           </li>
         );
       })}
