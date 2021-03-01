@@ -1,1 +1,1 @@
-All example apps are moved to: [https://github.com/nhost-examples](https://github.com/nhost-examples).
+# Moved to [nextjs-apollo](https://github.com/nhost/nhost/tree/main/examples/nextjs-apollo)
